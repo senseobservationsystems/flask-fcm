@@ -25,14 +25,14 @@ class FCM(object):
                 ctx.fcm_service = FCMNotification(api_key=current_app.config['FCM_API_KEY'])
             return ctx.fcm_service
 
-    def notify_single_device(self, registration_id, data_message):
-        response = self.service.notify_single_device(registration_id, data_message=data_message)
+    def notify_single_device(self, registration_id, data_message, time_to_live=None, content_available=None):
+        response = self.service.notify_single_device(registration_id, data_message=data_message, time_to_live=None, content_available=None)
         if int(response['failure']) > 0:
             self.handle_failure()
         return True
 
-    def notify_multiple_devices(self, registration_ids, data_message):
-        response = self.service.notify_multiple_devices(registration_ids, data_message=data_message)
+    def notify_multiple_devices(self, registration_ids, data_message, time_to_live=None, content_available=None):
+        response = self.service.notify_multiple_devices(registration_ids, data_message=data_message, time_to_live=None, content_available=None)
         if int(response['failure']) > 0:
             self.handle_failure()
         return True
