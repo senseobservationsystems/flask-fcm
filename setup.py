@@ -9,7 +9,7 @@ from setuptools import setup
 
 setup(
     name='Flask-FCM',
-    version='0.1',
+    version='0.2',
     url='https://github.com/senseobservationsystems/flask-fcm',
     author='Ricky Hariady',
     author_email='ricky@sense-os.nl',
